@@ -11,7 +11,7 @@
 .no-results {
     grid-column: 1 / -1;
     text-align: center;
-    color: #a0a0c0;
+    color: var(--text-secondary);
     font-size: 1.2rem;
     padding: 4rem;
 }

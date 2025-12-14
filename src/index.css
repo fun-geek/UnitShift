@@ -6,14 +6,16 @@
 */
 
 :root {
-  --bg-color: #050510;
-  --card-bg: rgba(25, 25, 40, 0.6);
-  --text-primary: #ffffff;
-  --text-secondary: #a0a0c0;
+  --bg-color: #f8f9fa;
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --text-primary: #1a1a2e;
+  --text-secondary: #4a4a6a;
   --accent-primary: #7000ff;
-  --accent-secondary: #00fff2;
+  --accent-secondary: #00d2c6;
   --font-main: 'Outfit', sans-serif;
-  --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+  --glass-border: 1px solid rgba(0, 0, 0, 0.05);
+  --input-bg: rgba(255, 255, 255, 0.8);
+  --shadow-light: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;900&display=swap');
@@ -29,8 +31,8 @@ body {
   background-color: var(--bg-color);
   color: var(--text-primary);
   background-image:
-    radial-gradient(circle at 10% 20%, rgba(100, 0, 255, 0.15) 0%, transparent 40%),
-    radial-gradient(circle at 80% 80%, rgba(0, 255, 242, 0.1) 0%, transparent 40%);
+    radial-gradient(circle at 10% 20%, rgba(112, 0, 255, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(0, 210, 198, 0.05) 0%, transparent 40%);
   min-height: 100vh;
   overflow-x: hidden;
 }
@@ -72,16 +74,18 @@ button {
 
 .app-title {
   font-size: 4rem;
-  background: linear-gradient(to right, #fff, #a0a0c0);
+  background: linear-gradient(to right, #1a1a2e, #7000ff);
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
   margin-bottom: 0.5rem;
-  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  /* text-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); Removed heavy shadow */
 }
 
 .title-accent {
   background: linear-gradient(135deg, var(--accent-secondary), var(--accent-primary));
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
 }
 

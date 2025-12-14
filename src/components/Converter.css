@@ -11,7 +11,7 @@
 .converter-title {
     font-size: 3rem;
     margin-bottom: 2rem;
-    background: linear-gradient(to right, #fff, #bfaaff);
+    background: linear-gradient(to right, #1a1a2e, #7000ff);
     -webkit-background-clip: text;
     color: transparent;
     text-transform: uppercase;
@@ -20,15 +20,15 @@
 }
 
 .converter-box {
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--card-bg);
     backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: var(--glass-border);
     padding: 3rem;
     border-radius: 30px;
     width: 100%;
     box-shadow:
-        0 20px 50px rgba(0, 0, 0, 0.5),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+        0 20px 50px rgba(0, 0, 0, 0.05),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.5);
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -60,19 +60,19 @@ label {
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #a0a0c0;
+    color: var(--text-secondary);
     margin-left: 1rem;
 }
 
 .glow-input,
 .result-display,
 .glow-select {
-    background: rgba(15, 16, 20, 0.6);
-    border: 2px solid rgba(255, 255, 255, 0.05);
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 16px;
     padding: 1.2rem;
     font-size: 1.5rem;
-    color: #fff;
+    color: var(--text-primary);
     font-family: 'Outfit', sans-serif;
     transition: all 0.3s ease;
     width: 100%;
@@ -81,13 +81,13 @@ label {
 .glow-input:focus,
 .glow-select:focus {
     border-color: var(--accent-primary);
-    box-shadow: 0 0 20px rgba(112, 0, 255, 0.3);
+    box-shadow: 0 0 20px rgba(112, 0, 255, 0.15);
     outline: none;
 }
 
 .result-display {
-    background: rgba(112, 0, 255, 0.1);
-    border-color: rgba(112, 0, 255, 0.3);
+    background: rgba(112, 0, 255, 0.05);
+    border-color: rgba(112, 0, 255, 0.1);
     min-height: 3.5rem;
     /* Ensure height matches inputs roughly */
     display: flex;
@@ -102,7 +102,7 @@ label {
     height: 50px;
     border-radius: 50%;
     font-size: 1.5rem;
-    color: #000;
+    color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -121,8 +121,8 @@ label {
 .back-btn {
     align-self: flex-start;
     background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: var(--text-secondary);
     padding: 0.8rem 1.5rem;
     border-radius: 50px;
     margin-bottom: 1rem;
@@ -130,9 +130,9 @@ label {
 }
 
 .back-btn:hover {
-    background: #fff;
-    color: #000;
-    border-color: #fff;
+    background: var(--accent-primary);
+    color: #fff;
+    border-color: var(--accent-primary);
 }
 
 @keyframes slideUp {

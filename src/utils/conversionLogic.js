@@ -87,6 +87,19 @@ export const categories = {
             gb: { label: 'Gigabytes', factor: 1073741824 },
             tb: { label: 'Terabytes', factor: 1099511627776 }
         }
+    },
+    currency: {
+        label: 'Currency',
+        units: {
+            USD: { label: 'US Dollar', factor: 1 },
+            EUR: { label: 'Euro', factor: 1 / 0.95 }, // 1 USD ~ 0.95 EUR
+            GBP: { label: 'British Pound', factor: 1 / 0.79 }, // 1 USD ~ 0.79 GBP
+            JPY: { label: 'Japanese Yen', factor: 1 / 154.5 }, // 1 USD ~ 154.5 JPY
+            INR: { label: 'Indian Rupee', factor: 1 / 86.85 }, // 1 USD ~ 86.85 INR
+            AUD: { label: 'Australian Dollar', factor: 1 / 1.58 }, // 1 USD ~ 1.58 AUD
+            CAD: { label: 'Canadian Dollar', factor: 1 / 1.43 }, // 1 USD ~ 1.43 CAD
+            CNY: { label: 'Chinese Yuan', factor: 1 / 7.29 } // 1 USD ~ 7.29 CNY
+        }
     }
 };
 

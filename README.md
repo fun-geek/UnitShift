@@ -6,10 +6,10 @@ A fresh, futuristic, and high-performance unit conversion web application built 
 
 ## 🚀 Key Features
 
-*   **Universal Conversion**: Support for 8+ major categories:
+*   **Universal Conversion**: Support for 9+ major categories:
     *   Length, Weight, Temperature
     *   Area, Volume, Speed
-    *   Time, Digital Storage
+    *   Time, Digital Storage, Currency
 *   **Precision Logic**: High-accuracy floating point handling for reliable calculations.
 *   **Smart Search**: Real-time filtering to find the exact converter you need instantly.
 *   **Fresh UI/UX**:
