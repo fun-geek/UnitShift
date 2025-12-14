@@ -2,8 +2,6 @@
 
 A fresh, futuristic, and high-performance unit conversion web application built with React and Vite. Designed to break away from the standard "corporate" or "AI-generated" look with a bespoke neon-glass aesthetic.
 
-![UnitShift Preview](https://unit-shift.vercel.app/)
-
 ## 🚀 Key Features
 
 *   **Universal Conversion**: Support for 8+ major categories:
