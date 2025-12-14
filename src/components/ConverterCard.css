@@ -1,0 +1,69 @@
+.converter-card {
+    position: relative;
+    background: rgba(30, 30, 40, 0.4);
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.converter-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    background: rgba(40, 40, 60, 0.6);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.card-content {
+    position: relative;
+    z-index: 2;
+    padding: 1.5rem;
+}
+
+.card-icon {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #00fff2, #7000ff);
+    -webkit-background-clip: text;
+    color: transparent;
+    display: inline-block;
+    transition: transform 0.4s ease;
+}
+
+.converter-card:hover .card-icon {
+    transform: scale(1.2) rotate(10deg);
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    color: #fff;
+}
+
+p {
+    color: #a0a0c0;
+    font-size: 0.9rem;
+}
+
+.card-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 100%, rgba(112, 0, 255, 0.2), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+.converter-card:hover .card-glow {
+    opacity: 1;
+}
