@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useConverter } from '../hooks/useConverter';
 import { categories } from '../utils/conversionLogic';
+import * as Icons from 'lucide-react';
+import { motion } from 'framer-motion';
 import './Converter.css';
 
-const Converter = ({ category, onBack }) => {
+const Converter = () => {
+    const { categoryId } = useParams();
+    const navigate = useNavigate();
+    const [copied, setCopied] = useState(false);
+
+    // Convert logic
     const {
         inputValue,
         setInputValue,
@@ -13,17 +21,53 @@ const Converter = ({ category, onBack }) => {
         setToUnit,
         result,
         units,
-        swapUnits
-    } = useConverter(category);
+        swapUnits,
+        loading
+    } = useConverter(categoryId);
 
-    if (!category) return null;
+    const categoryData = categories[categoryId];
+
+    if (!categoryData) {
+        return <div className="error">Category not found</div>;
+    }
+
+    const IconComponent = Icons[categoryData.icon] || Icons.HelpCircle;
+
+    const handleCopy = () => {
+        if (result) {
+            navigator.clipboard.writeText(result);
+            setCopied(true);
+            setTimeout(() => setCopied(false), 2000);
+        }
+    };
 
     return (
-        <div className="converter-container">
-            <button className="back-btn" onClick={onBack}>← Back</button>
-            <h2 className="converter-title">{categories[category].label}</h2>
+        <motion.div
+            className="converter-container"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.3 }}
+        >
+            <button className="back-btn" onClick={() => navigate('/')}>
+                <Icons.ArrowLeft size={20} /> Back
+            </button>
 
-            <div className="converter-box">
+            <header className="converter-header">
+                <div className={`icon-badge ${categoryData.gradient}`}>
+                    <IconComponent size={24} color="white" />
+                </div>
+                <div>
+                    <h2 className="converter-title">{categoryData.label}</h2>
+                    {categoryId === 'currency' && (
+                        <span className={`status-badge ${loading ? 'loading' : 'live'}`}>
+                            {loading ? 'Fetching...' : '• Live Rates'}
+                        </span>
+                    )}
+                </div>
+            </header>
+
+            <div className="converter-box glass-panel">
                 <div className="input-group">
                     <label>From</label>
                     <input
@@ -32,6 +76,7 @@ const Converter = ({ category, onBack }) => {
                         onChange={(e) => setInputValue(e.target.value)}
                         placeholder="0"
                         className="glow-input"
+                        autoFocus
                     />
                     <select
                         value={fromUnit}
@@ -44,13 +89,24 @@ const Converter = ({ category, onBack }) => {
                     </select>
                 </div>
 
-                <button className="swap-btn" onClick={swapUnits} aria-label="Swap units">
-                    ⇅
-                </button>
+                <div className="swap-container">
+                    <button className="swap-btn" onClick={swapUnits} aria-label="Swap units">
+                        <Icons.ArrowUpDown size={20} />
+                    </button>
+                </div>
 
                 <div className="input-group">
                     <label>To</label>
-                    <div className="result-display">{result || '0'}</div>
+                    <div className="result-wrapper">
+                        <div className="result-display">{result || '0'}</div>
+                        <button
+                            className={`copy-btn ${copied ? 'copied' : ''}`}
+                            onClick={handleCopy}
+                            title="Copy to clipboard"
+                        >
+                            {copied ? <Icons.Check size={18} /> : <Icons.Copy size={18} />}
+                        </button>
+                    </div>
                     <select
                         value={toUnit}
                         onChange={(e) => setToUnit(e.target.value)}
@@ -62,7 +118,7 @@ const Converter = ({ category, onBack }) => {
                     </select>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

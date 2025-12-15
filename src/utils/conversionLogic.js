@@ -1,6 +1,9 @@
 export const categories = {
     length: {
         label: 'Length',
+        icon: 'Ruler',
+        gradient: 'from-blue-500 to-cyan-400',
+        keywords: ['meter', 'kilometer', 'centimeter', 'mile', 'foot', 'inch', 'yard', 'height', 'distance'],
         units: {
             m: { label: 'Meters', factor: 1 },
             km: { label: 'Kilometers', factor: 1000 },
@@ -15,6 +18,9 @@ export const categories = {
     },
     weight: {
         label: 'Weight',
+        icon: 'Scale',
+        gradient: 'from-purple-500 to-pink-500',
+        keywords: ['kilogram', 'gram', 'pound', 'ounce', 'stone', 'heavy', 'mass'],
         units: {
             kg: { label: 'Kilograms', factor: 1 },
             g: { label: 'Grams', factor: 0.001 },
@@ -27,6 +33,9 @@ export const categories = {
     },
     temperature: {
         label: 'Temperature',
+        icon: 'Thermometer',
+        gradient: 'from-orange-500 to-red-500',
+        keywords: ['celsius', 'fahrenheit', 'kelvin', 'heat', 'cold', 'weather'],
         type: 'function', // Special handling for non-linear
         units: {
             C: { label: 'Celsius' },
@@ -36,6 +45,9 @@ export const categories = {
     },
     area: {
         label: 'Area',
+        icon: 'Square',
+        gradient: 'from-green-400 to-emerald-600',
+        keywords: ['acre', 'hectare', 'square', 'land', 'property'],
         units: {
             sqm: { label: 'Square Meters', factor: 1 },
             sqkm: { label: 'Square Kilometers', factor: 1e6 },
@@ -47,6 +59,9 @@ export const categories = {
     },
     volume: {
         label: 'Volume',
+        icon: 'Beaker',
+        gradient: 'from-indigo-400 to-blue-600',
+        keywords: ['liter', 'gallon', 'pint', 'cup', 'fluid', 'liquid', 'drink'],
         units: {
             l: { label: 'Liters', factor: 1 },
             ml: { label: 'Milliliters', factor: 0.001 },
@@ -59,6 +74,9 @@ export const categories = {
     },
     speed: {
         label: 'Speed',
+        icon: 'Zap',
+        gradient: 'from-yellow-400 to-orange-500',
+        keywords: ['mph', 'kmh', 'knot', 'fast', 'velocity'],
         units: {
             mps: { label: 'Meters/Second', factor: 1 },
             kmh: { label: 'Kilometers/Hour', factor: 0.277778 },
@@ -68,6 +86,9 @@ export const categories = {
     },
     time: {
         label: 'Time',
+        icon: 'Clock',
+        gradient: 'from-teal-400 to-cyan-500',
+        keywords: ['second', 'minute', 'hour', 'day', 'week', 'month', 'year', 'duration'],
         units: {
             s: { label: 'Seconds', factor: 1 },
             min: { label: 'Minutes', factor: 60 },
@@ -79,7 +100,10 @@ export const categories = {
         }
     },
     digital: {
-        label: 'Digital Storage',
+        label: 'Digital',
+        icon: 'HardDrive',
+        gradient: 'from-slate-700 to-slate-900',
+        keywords: ['byte', 'bit', 'storage', 'memory', 'disk', 'ram'],
         units: {
             b: { label: 'Bytes', factor: 1 },
             kb: { label: 'Kilobytes', factor: 1024 },
@@ -90,15 +114,18 @@ export const categories = {
     },
     currency: {
         label: 'Currency',
+        icon: 'Coins',
+        gradient: 'from-emerald-300 to-green-600',
+        keywords: ['dollar', 'euro', 'pound', 'yen', 'rupee', 'money', 'cash', 'forex'],
         units: {
             USD: { label: 'US Dollar', factor: 1 },
-            EUR: { label: 'Euro', factor: 1 / 0.95 }, // 1 USD ~ 0.95 EUR
-            GBP: { label: 'British Pound', factor: 1 / 0.79 }, // 1 USD ~ 0.79 GBP
-            JPY: { label: 'Japanese Yen', factor: 1 / 154.5 }, // 1 USD ~ 154.5 JPY
-            INR: { label: 'Indian Rupee', factor: 1 / 86.85 }, // 1 USD ~ 86.85 INR
-            AUD: { label: 'Australian Dollar', factor: 1 / 1.58 }, // 1 USD ~ 1.58 AUD
-            CAD: { label: 'Canadian Dollar', factor: 1 / 1.43 }, // 1 USD ~ 1.43 CAD
-            CNY: { label: 'Chinese Yuan', factor: 1 / 7.29 } // 1 USD ~ 7.29 CNY
+            EUR: { label: 'Euro', factor: 1 / 0.95 },
+            GBP: { label: 'British Pound', factor: 1 / 0.79 },
+            JPY: { label: 'Japanese Yen', factor: 1 / 154.5 },
+            INR: { label: 'Indian Rupee', factor: 1 / 86.85 },
+            AUD: { label: 'Australian Dollar', factor: 1 / 1.58 },
+            CAD: { label: 'Canadian Dollar', factor: 1 / 1.43 },
+            CNY: { label: 'Chinese Yuan', factor: 1 / 7.29 }
         }
     }
 };
