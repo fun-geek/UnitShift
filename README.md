@@ -4,7 +4,7 @@ A fresh, futuristic, and high-performance unit conversion web application built 
 
 ## 🚀 Key Features
 
-*   **Universal Conversion**: Support for 9+ major categories:
+*   **Universal Conversion**: Support for 9+ major categories :
     *   Length, Weight, Temperature
     *   Area, Volume, Speed
     *   Time, Digital Storage, Currency
